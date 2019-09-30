@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet"/>
     <title>Loja Virtual</title>
 </head>
 <body>
@@ -19,14 +20,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"<?php $curso;?> <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#">Cursos</a>
                     </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Curso</a>
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -36,6 +38,41 @@
             </div>
         </nav>
     </header>
+    <main>  
+        <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">
+            <div class="card text-center" style="width: 18rem;">
+            <h3>HTML 5 e CSS3</h3>
+                <img src="images/htmle.svg" class="card-img-top" alt="logo do html">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML 5 e CSS 3</h5>
+                            <p class="card-text">R$ 1.800,00</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>    
+                    </div>    
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+            <h3>PHP 7</h3><br>
+                <img src="images/php.png" class="card-img-top" alt="logo do php">
+                <br>
+                    <div class="card-body">
+                        <h5 class="card-title">PHP 7</h5>
+                            <p class="card-text">R$ 4.000</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>    
+                    </div>    
+            </div>
+            <div class="card text-center" style="width: 19rem;">
+            <h3>JavaScript</h3><br>
+                <img src="images/js.png" class="card-img-top" alt="logo do javascript"><br>
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript</h5>
+                            <p class="card-text">R$ 3.000</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>    
+                    </div>    
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 
 </body>
 </html>

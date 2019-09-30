@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-    $curso = "Web Full Stack";
+    $usuario = ["nome"=>"Anaê"];
 ?>
 <html lang="pt-BR">
 <head>
@@ -20,10 +20,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                <?php
+                    if(isset($usuario) && $usuario != ""){
+                ?>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cursos</a>
                     </li>
-                        <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Olá <?php echo $usuario['nome'];?></a>
+                    </li>
+                <?php }else{?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cursos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
                     </li>
                     </li>
@@ -31,6 +41,7 @@
                         <a class="nav-link" href="#">Cadastrar</a>
                     </li>
                 </ul>
+                <?php } ?>
                 <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
@@ -42,7 +53,7 @@
         <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">
             <div class="card text-center" style="width: 18rem;">
             <h3>HTML 5 e CSS3</h3>
-                <img src="images/htmle.svg" class="card-img-top" alt="logo do html">
+                <img src="images/html.svg" class="card-img-top" alt="logo do html">
                     <div class="card-body">
                         <h5 class="card-title">HTML 5 e CSS 3</h5>
                             <p class="card-text">R$ 1.800,00</p>
@@ -55,7 +66,7 @@
                 <br>
                     <div class="card-body">
                         <h5 class="card-title">PHP 7</h5>
-                            <p class="card-text">R$ 4.000</p>
+                            <p class="card-text">R$ 4.000,00</p>
                             <a href="#" class="btn btn-primary">Comprar</a>    
                     </div>    
             </div>
@@ -64,7 +75,7 @@
                 <img src="images/js.png" class="card-img-top" alt="logo do javascript"><br>
                     <div class="card-body">
                         <h5 class="card-title">JavaScript</h5>
-                            <p class="card-text">R$ 3.000</p>
+                            <p class="card-text">R$ 3.000,00</p>
                             <a href="#" class="btn btn-primary">Comprar</a>    
                     </div>    
             </div>

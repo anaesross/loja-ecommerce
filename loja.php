@@ -18,6 +18,7 @@
     <title>Loja Virtual</title>
 </head>
 <body>
+<!--MENU-->
     <header class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <img style="width: 10%;padding:10px" src="images/logo.png"/>
@@ -51,7 +52,8 @@
             </div>
         </nav>
     </header>
-    
+<!--FIM MENU-->
+<!--SUB MENU-->
     <div class="container-fluid">
     <hr style="background-color:orange">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -80,9 +82,10 @@
                     }
                     ?>
             </div>
-        </nav>
-                
+        </nav>                
     </div>
+<!--FIM SUBMENU-->
+<!--CARDS DOS PRODUTOS-->
     <main>  
         <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">
         <?php
@@ -108,6 +111,7 @@
         ?>
         </section>
     </main>
+<!--FIM CARDS PRODUTOS-->
     <footer>
 
     </footer>

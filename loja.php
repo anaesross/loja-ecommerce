@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php 
     $usuario = ["nome"=>"Anaê"];
+    $produtos =[
+        ["nome"=>"Curso HTML e CSS", "preco"=>1200.00, "duracao"=>"5 meses"],
+        ["nome"=>"PHP", "preco"=>1000.00, "duracao"=>"8 meses"],
+        ["nome"=>"Javascript", "preco"=>1500.00, "duracao"=>"12 meses"],
+    ];
 ?>
 <html lang="pt-BR">
 <head>
@@ -51,34 +56,27 @@
     </header>
     <main>  
         <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">
+        <?php
+            if(isset($produtos) && $produtos != []){ //se existir produtos cadastrados mostrar foreach abaixo
+        ?>
+        <?php    
+        foreach($produtos as $produto){  //nomeei os arrays de produtos para $produto          
+        ?>
             <div class="card text-center" style="width: 18rem;">
-            <h3>HTML 5 e CSS3</h3>
-                <img src="images/html.svg" class="card-img-top" alt="logo do html">
-                    <div class="card-body">
-                        <h5 class="card-title">HTML 5 e CSS 3</h5>
-                            <p class="card-text">R$ 1.800,00</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>    
-                    </div>    
+                <h3><?php echo $produto["nome"];?></h3>
+                    <img src="images/html.svg" class="card-img-top" alt="logo do html">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $produto["nome"];?></h5>
+                                <p class="card-text"><?php echo $produto["preco"];?></p>
+                                <p class="card-text"><?php echo $produto["duracao"];?></p>
+                                <a href="#" class="btn btn-primary">Comprar</a>    
+                        </div>    
             </div>
-            <div class="card text-center" style="width: 18rem;">
-            <h3>PHP 7</h3><br>
-                <img src="images/php.png" class="card-img-top" alt="logo do php">
-                <br>
-                    <div class="card-body">
-                        <h5 class="card-title">PHP 7</h5>
-                            <p class="card-text">R$ 4.000,00</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>    
-                    </div>    
-            </div>
-            <div class="card text-center" style="width: 19rem;">
-            <h3>JavaScript</h3><br>
-                <img src="images/js.png" class="card-img-top" alt="logo do javascript"><br>
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript</h5>
-                            <p class="card-text">R$ 3.000,00</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>    
-                    </div>    
-            </div>
+        <?php } ?>
+        <?php }else{ //caso não tenha produtos cadastrados, mostrar mensagem abaixo
+            echo "Não possuímos produtos no momento";
+        }
+        ?>
         </section>
     </main>
     <footer>

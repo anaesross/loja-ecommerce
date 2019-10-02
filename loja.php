@@ -6,7 +6,7 @@
         ["nome"=>"PHP", "preco"=>1000.00, "duracao"=>"8 meses","img"=>"images/php.png"],
         ["nome"=>"Javascript", "preco"=>1500.00, "duracao"=>"12 meses","img"=>"images/js.png"],
     ];
-    $categorias=["Cursos","Palestras", "Artigos","Livros","Ebook"];
+    $categorias=["Cursos","Palestras", "Artigos","Livros","Ebook","Gibi"];
 ?>
 <html lang="pt-BR">
 <head>
@@ -62,10 +62,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <?php 
-                    if(isset($categorias) && $categorias != []){
+                    if(isset($categorias) && $categorias != []){ //se existir categorias mostra o foreach
                 ?>
                 <?php 
-                    foreach($categorias as $categoria){
+                    foreach($categorias as $categoria){ //laço para todas as categorias existentes.
                 ?>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
@@ -78,7 +78,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
               </form>
                     <?php }else{
-                        echo "Não possuímos categorias";
+                        echo "Não possuímos categorias"; //senao possuir categorias
                     }
                     ?>
             </div>

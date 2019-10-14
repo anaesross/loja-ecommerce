@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once("assets/functions/variaveis.php");?>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 <body>
     <?php include_once("assets/functions/menu.php") ?>
     <?php include_once("assets/functions/categorias.php");?>
-    <?php include_once("assets/functions/variaveis.php");?>
+    <?php include_once("variaveis.php");?>
 <!--CARDS DOS PRODUTOS-->
     <main>  
         <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">
@@ -24,11 +24,11 @@
         ?>
             <div class="card text-center" style="width: 18rem;">
                 <h3><?php echo $produto["nome"];?></h3>
-                    <img src="<?php echo $produto['img'];?>" class="card-img-top" alt="logo do html">
+                    <img src="<?php echo $produto['imagem'];?>" class="card-img-top" alt="logo do html">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $produto["nome"];?></h5>
                                 <p class="card-text"><?php echo $produto["preco"];?></p>
-                                <p class="card-text"><?php echo $produto["duracao"];?></p>
+                                <p class="card-text"><?php echo $produto["descricao"];?></p>
                                 <a href="carrinho.php?nomeProduto=<?php echo $produto['nome'];?>" class="btn btn-primary">Comprar</a>    
                         </div>    
             </div>

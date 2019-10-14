@@ -36,9 +36,9 @@
             $deuCerto = file_put_contents($nomeArquivo, $json); //salva o json dentro de um arquivo
 
             if($deuCerto){
-                return "Produto Cadastrado";
+                echo "<script>alert('Produto Cadastrado');</script>";
             } else {
-                return "Erro ao cadastrar Produto";
+                echo "<script>alert('Erro ao cadastrar Produto');</script>";
             }
 
 
@@ -50,12 +50,24 @@
     }
 
     if($_POST){
-        echo cadastrarProduto($_POST['nome'],$_POST['descricao'], $_POST['imagem'], $_POST['preco']);
+
+        /* echo "<pre>";
+        var_dump($_FILES);
+        exit;
+ */
+        //salvando o arquivo (imagem)
+        $imagem = $_FILES['imagem']['name'];
+        $localTmp = $_FILES['imagem']['tmp_name'];
+        $caminho = 'assets/images/'.$imagem;
+        
+        $deuCerto = move_uploaded_file($localTmp, $caminho);
+        
+        echo cadastrarProduto($_POST['nome'],$_POST['descricao'],$caminho, $_POST['preco']);
     }
 
 ?>
 <!DOCTYPE html>
-<?php include_once("assets/functions/variaveis.php");?>
+<?php include_once("variaveis.php");?>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -77,7 +89,7 @@ include_once("assets/functions/categorias.php");
             </div>
         </div>
             <div class="col-12">
-                <form method="post" action="#">
+                <form method="post" action="#" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-6">
                             <label>Título</label>

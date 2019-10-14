@@ -1,4 +1,4 @@
-<?php include_once("assets/functions/variaveis.php");?>
+<?php include_once("variaveis.php");?>
 <!--MENU-->
 <header class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -1,14 +1,31 @@
 <?php
     function cadastrarProduto($nomeProduto, $descProduto, $imgProduto, $precoProduto){
         $nomeArquivo = "produto.json";
-        if(file_exists($nomeArquivo)){
-
+        if(file_exists($nomeArquivo)){ //se o array nao estiver vazio
+            //abrindo e pegando as informações do arquivo salvo = produto.json    
+            $arquivo = file_get_contents($nomeArquivo);
+            //transformar o arquivo json em objeto para o PHP conseguir ler 
+            $produtos= json_decode($arquivo, true); //true = transforma em array ao invéz de objeto
+            //outra variavel , a variavel que esta dentro do else soh acontnece dentro do else
+            var_dump($produtos);
+            //json_decode transforma em um objeto
+           
         } else {
-            $produtos = [];
+            $produtos = []; //se o array for vazio
 
             //mesma coisa que a função array_push inputa valores dentro da array
 
             $produtos[] = ["nome"=>$nomeProduto, "descricao"=>$descProduto, "imagem"=>$imgProduto, "preco"=>$precoProduto];
+
+            $json = json_encode($produtos); //transforma o array em json
+
+            $deuCerto = file_put_contents($nomeArquivo, $json); //salva o json dentro de um arquivo
+
+            if($deuCerto){
+                return "Produto Cadastrado";
+            } else {
+                return "Erro ao cadastrar Produto";
+            }
 
 
             // echo"<pre>";
@@ -19,7 +36,7 @@
     }
 
     if($_POST){
-        cadastrarProduto($_POST['nome'],$_POST['descricao'], $_POST['imagem'], $_POST['preco']);
+        echo cadastrarProduto($_POST['nome'],$_POST['descricao'], $_POST['imagem'], $_POST['preco']);
     }
 
 ?>

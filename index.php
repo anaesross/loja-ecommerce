@@ -12,6 +12,7 @@
 <body>
     <?php include_once("assets/functions/menu.php") ?>
     <?php include_once("assets/functions/categorias.php");?>
+    <?php include_once("assets/functions/variaveis.php");?>
 <!--CARDS DOS PRODUTOS-->
     <main>  
         <section class="container d-flex flex-direction-row justify-content-around align-item-center mt-5">

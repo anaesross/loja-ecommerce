@@ -24,7 +24,7 @@
         ?>
             <div class="card text-center" style="width: 18rem;">
                 <h3><?php echo $produto["nome"];?></h3>
-                    <img src=<?php echo $produto['img'];?> class="card-img-top" alt="logo do html">
+                    <img src="<?php echo $produto['img'];?>" class="card-img-top" alt="logo do html">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $produto["nome"];?></h5>
                                 <p class="card-text"><?php echo $produto["preco"];?></p>

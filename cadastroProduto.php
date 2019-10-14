@@ -5,9 +5,23 @@
             //abrindo e pegando as informações do arquivo salvo = produto.json    
             $arquivo = file_get_contents($nomeArquivo);
             //transformar o arquivo json em objeto para o PHP conseguir ler 
-            $produtos= json_decode($arquivo, true); //true = transforma em array ao invéz de objeto
             //outra variavel , a variavel que esta dentro do else soh acontnece dentro do else
-            var_dump($produtos);
+            $produtos= json_decode($arquivo, true); //true = transforma em array ao invéz de objeto
+
+            //adiciona novo produto no arquivo. como se fosse um array push
+            $produtos[] = ["nome"=>$nomeProduto, "descricao"=>$descProduto, "imagem"=>$imgProduto, "preco"=>$precoProduto];
+
+            $json = json_encode($produtos); //transforma o array em json
+
+            $deuCerto = file_put_contents($nomeArquivo, $json); //salva o json dentro de um arquivo
+
+            if($deuCerto){ //retorna sucesso ou nao para o usuário
+                echo "<script>alert('Produto Cadastrado');</script>";
+            } else {
+                echo "<script>alert('Falha ao cadastrar produto');</script>";
+            }
+
+            //var_dump($produtos);
             //json_decode transforma em um objeto
            
         } else {

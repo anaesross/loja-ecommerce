@@ -1,6 +1,7 @@
 <?php
+
     // cadastro do usuário no banco de dados
-    $usuario = ["email"=>"glngabrielli@gmail.com", "senha"=>'$2y$10$GYE7JjnPo8JChGOhKMHBreWqrCO9SLIKq.EFrHRbPRt4tA84.ilLG']; // usar aspas simples no hash
+    $usuario = ["email"=>"anae08@gmail.com", "senha"=>'$2y$10$GYE7JjnPo8JChGOhKMHBreWqrCO9SLIKq.EFrHRbPRt4tA84.ilLG']; // usar aspas simples no hash
 
     if($_POST) {
         $email = $_POST["email"]; // name dentro do formulário
@@ -10,7 +11,7 @@
         if($email == $usuario["email"]){
             if(password_verify($senha, $usuario["senha"])){ //validadno a senha
                 session_start(); //criar uma sessão para o usuário que vai logar
-                $_SESSION["usuario"] = ["nome" => "Giuliana"];
+                $_SESSION["usuario"] = ["nome" => "Anaê"];
                 header("Location:index.php"); // para redirecionar o usuário pra outra página
 
             } else {
@@ -21,12 +22,7 @@
             echo "E-mail ou senha inválidas";
         }
     }
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +34,8 @@
 </head>
 <body>
 
-    <?php include_once("header.php"); ?>
+    <?php include_once("assets/functions/menu.php");?>
+    <?php include_once("assets/functions/categorias.php"); ?>
 
     <main class="d-flex justify-content-center align-items-center p-5">
         <form action="login.php" method="post" class="card p-2">

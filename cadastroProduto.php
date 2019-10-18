@@ -1,4 +1,5 @@
 <?php
+
     function cadastrarProduto($nomeProduto, $descProduto, $imgProduto, $precoProduto){
         $nomeArquivo = "produto.json";
         if(file_exists($nomeArquivo)){ //se o array nao estiver vazio
@@ -66,8 +67,9 @@
     }
 
 ?>
+    <?php include_once("assets/functions/menu.php");?>
+    <?php include_once("assets/functions/categorias.php"); ?>
 <!DOCTYPE html>
-<?php include_once("variaveis.php");?>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
